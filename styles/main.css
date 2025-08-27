@@ -1,0 +1,48 @@
+:root{
+  --bg:#0b1020; --panel:#10182e; --ink:#e8eefc; --muted:#8ea2d8; --card:#111a34; --accent:#4a56b0;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+a{ color:inherit; text-decoration:none; }
+.container{ width:min(1100px, 92%); margin-inline:auto; }
+
+.site-header{ background:var(--panel); border-bottom:1px solid #223059; }
+.site-header .container{ display:flex; align-items:center; gap:16px; padding:12px 0; }
+.brand{ margin:0; font-size:20px; }
+.nav{ margin-left:auto; display:flex; gap:14px; }
+.nav a{ opacity:.9; }
+.nav a:hover{ opacity:1; }
+
+.site-footer{ color:var(--muted); padding:20px 0; border-top:1px solid #223059; margin-top:40px; }
+
+.hero{ padding:32px 0 10px; }
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin:18px 0 40px; }
+.card{ background:var(--card); border:1px solid #223059; border-radius:12px; padding:16px; transition:transform .15s ease, border-color .15s ease; }
+.card:hover{ transform:translateY(-2px); border-color:#2a3c6e; }
+
+.controls{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:10px; background:var(--panel); border:1px solid #223059; border-radius:12px; }
+.controls select,.controls button{ background:#1b2746; color:var(--ink); border:1px solid #263561; border-radius:8px; padding:8px 10px; cursor:pointer; }
+.hint{ color:var(--muted); margin-left:auto; }
+
+.activity-wrap{ position:relative; margin-top:14px; border:1px solid #223059; border-radius:12px; overflow:hidden; background:#0e1427; }
+.activity-canvas{ width:100%; height:70vh; display:block; }
+.video-toggle{ display:flex; align-items:center; gap:8px; }
+
+.video-overlay{
+  position:absolute; inset:0;
+  display:none; /* toggled by JS */
+  align-items:flex-start; justify-content:flex-end;
+  pointer-events:none; /* click-through by default */
+}
+.video-overlay.is-visible{ display:flex; }
+.video-box{
+  width:min(480px, 95%);
+  margin:10px;
+  background:rgba(16,24,46,.85);
+  border:1px solid #223059; border-radius:10px;
+  pointer-events:auto; /* enable controls */
+}
+.video-box video{ width:100%; height:auto; display:block; border-radius:10px; }
+.video-caption{ padding:8px 10px; color:var(--muted); font-size:13px; }
+
+.note{ color:var(--muted); font-size:13px; }

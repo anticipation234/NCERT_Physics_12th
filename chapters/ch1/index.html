@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Ch.1 — Electric Charges & Fields | Physics Lab</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Physics Lab</h1>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/chapters/ch1/">Chapter 1</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Chapter 1: Electric Charges and Fields</h2>
+    <p class="note">NCERT 12th — we’ll build intuition with a live activity and short explanations.</p>
+
+    <!-- Controls shared with your demo -->
+    <div class="controls" id="activity-controls">
+      <label>Rod A:
+        <select id="rodA"><option>Glass</option><option>Plastic</option></select>
+      </label>
+      <button id="rubA">Rub A</button>
+
+      <label style="margin-left:16px;">Rod B:
+        <select id="rodB"><option>Glass</option><option>Plastic</option></select>
+      </label>
+      <button id="rubB">Rub B</button>
+
+      <button id="discharge">Discharge Both</button>
+
+      <span class="hint">Rub, then drag rods. Unlike ⇒ together (gap); Like ⇒ apart.</span>
+    </div>
+
+    <!-- Activity container: your code will render inside #activity-root -->
+    <section class="activity-wrap" id="activity-root" data-activity="ch1-electrification">
+      <!-- Canvas will be created here by your script -->
+      <div class="video-overlay" id="video-overlay">
+        <div class="video-box">
+          <video id="explain-video" src="/assets/videos/ch1-intro.mp4" controls preload="metadata"></video>
+          <div class="video-caption">Teacher’s explanation overlay. You can talk while students try the activity.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="video-toggle" style="margin-top:8px;">
+      <input type="checkbox" id="toggleVideo">
+      <label for="toggleVideo">Show/Hide explanation video overlay</label>
+    </div>
+
+    <section style="margin-top:20px;">
+      <h3>What’s happening here?</h3>
+      <ul>
+        <li>Rubbing transfers charge (triboelectric effect): Glass tends to become positive; Plastic tends to become negative.</li>
+        <li>Like charges repel, unlike charges attract.</li>
+        <li>We keep a tiny “air-gap” so rods never overlap (contact modeling).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 Physics Lab</div>
+  </footer>
+
+  <!-- p5 is only needed for this activity; OK to load here -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.min.js" defer></script>
+
+  <!-- Generic page JS (video overlay, small helpers) -->
+  <script src="/js/site.js" defer></script>
+
+  <!-- Tiny loader that mounts the correct activity into #activity-root -->
+  <script src="/js/activity-loader.js" defer></script>
+</body>
+</html>
